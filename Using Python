@@ -43,4 +43,4 @@ To clean and preprocess the raw dataset for analysis and modeling.
 - Script: `cleaning_script.py`
 - Summary: `README.md`
 
-Exploratory Data Analysis (EDA) to understand customer behaviors and spot patterns for segmentation 
+Exploratory Data Analysis (EDA) to understand customer behaviors and spot patterns for segmentation

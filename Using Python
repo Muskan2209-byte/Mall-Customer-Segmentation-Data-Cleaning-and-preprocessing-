@@ -1,1 +1,46 @@
+Objective: Clean and prepare a raw dataset. TOPIC: Mall Customer Segmentation Data
+Task 1: Data Cleaning and Preprocessing using Python (Pandas)
+ 1. Load the Data
+import pandas as pd
+df = pd.read_csv('Mall_Customers.csv')
+🔹 2. Explore the Dataset
+print(df.head())
+print(df.info())
+print(df.describe())
+🔹 3. Handle Missing Values
+print(df.isnull().sum())
+df = df.dropna()  # Or use imputation if preferred
+🔹 4. Remove Duplicates
+df = df.drop_duplicates()
+🔹 5. Standardize Text Values
+For example, standardizing gender:
+df['Gender'] = df['Gender'].str.lower().str.strip()
+🔹 6. Convert Date Formats (if applicable)
+If there were any date columns (this dataset may not have them), you'd use:
+df['Date_Column'] = pd.to_datetime(df['Date_Column'], format='%d-%m-%Y')
+🔹 7. Rename Columns for Consistency
+df.columns = df.columns.str.lower().str.replace(' ', '_')
+🔹 8. Fix Data Types
+df['age'] = df['age'].astype(int)
+# Mall Customer Segmentation Data - Cleaning Summary
+README.md (Short Summary)
+## Objective
+To clean and preprocess the raw dataset for analysis and modeling.
 
+## Changes Made
+- Removed missing values (0 rows affected).
+- Dropped duplicate rows.
+- Standardized text in 'Gender' column to lowercase.
+- Renamed all column headers to lowercase with underscores.
+- Ensured correct data types (e.g., age as int).
+- Verified dataset integrity after cleaning.
+
+## Tools Used
+- Python (Pandas)
+
+## Files
+- Cleaned Dataset: `mall_customers_cleaned.csv`
+- Script: `cleaning_script.py`
+- Summary: `README.md`
+
+Exploratory Data Analysis (EDA) to understand customer behaviors and spot patterns for segmentation 

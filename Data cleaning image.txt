@@ -1,0 +1,19 @@
+data_cleaning_project/
+│
+├── data/
+│   ├── raw/
+│   │   └── mall_customers.csv
+│   └── cleaned/
+│       └── cleaned_mall_customers.csv
+│
+├── notebooks/
+│   └── data_cleaning.ipynb
+│
+├── scripts/
+│   └── data_cleaning.py
+│
+├── screenshots/
+│   └── example_screenshot.jpg
+│
+├── .gitignore
+└── README.md

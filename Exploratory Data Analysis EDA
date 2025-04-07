@@ -1,0 +1,23 @@
+Exploratory Data Analysis (EDA) to understand customer behaviors and spot patterns for segmentation.
+
+📊 Suggested EDA Steps:
+1. Basic Stats & Visuals
+Age distribution
+Gender ratio
+Income vs Spending Score scatter plot
+Pairplot to see variable interactions
+
+2. Group Insights
+Average income/spending by gender
+Age groups vs spending behavior
+
+3. Visual Tools
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+Example: Age distribution
+sns.histplot(df['age'], bins=10, kde=True)
+plt.title("Age Distribution")
+plt.show()
+
+Once EDA is done, we can run K-Means Clustering to segment customers into groups (e.g., low spenders, high income etc)

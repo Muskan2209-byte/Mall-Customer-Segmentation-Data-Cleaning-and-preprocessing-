@@ -1,0 +1,28 @@
+#  Mall Customer Segmentation using K-Means Clustering
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+
+# Load the cleaned dataset
+df = pd.read_csv('mall_customers_cleaned.csv')
+df.head()
+
+# We'll cluster using 'Annual Income' and 'Spending Score'
+X = df[['annual_income_k$', 'spending_score_1_100']]
+
+# Optional: Standardize the data
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Plotting the clusters
+plt.figure(figsize=(8,6))
+sns.scatterplot(x='annual_income_k$', y='spending_score_1_100', hue='cluster', palette='tab10', data=df, s=100)
+plt.title('Customer Segments (K-Means Clusters)')
+plt.xlabel('Annual Income (k$)')
+plt.ylabel('Spending Score (1-100)')
+plt.legend(title='Cluster')
+plt.grid(True)
+plt.show()
